@@ -11,3 +11,17 @@ Has the dataset collected from various sources
 ## resized(224*224).zip
 The images which we got after resizing
 
+## 📁 Dataset Download
+
+The original and resized fingerprint datasets are too large for GitHub.  
+Please download them from this shared Google Drive folder:
+
+🔗 [Download Datasets (Google Drive)](https://drive.google.com/drive/folders/19QanCCAnysk-3JebsYqcXtaaZCz-RJcj?usp=drive_link)
+
+**Contents:**
+- `original_dataset.zip`
+- `resized(224x224).zip`
+
+After downloading, extract the ZIP files and place them in the project directory or a new `datasets/` folder.
+
+
