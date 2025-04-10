@@ -11,6 +11,12 @@ Has the dataset collected from various sources
 ## resized(224*224).zip
 The images which we got after resizing
 
+## normalised.zip
+The images which are normalised
+
+## normalise.py
+Min-Max Normalization: This involves scaling the pixel values to a fixed range, like [0, 1]. Each pixel value is transformed by subtracting the minimum pixel value of the image and then dividing by the difference between the maximum and minimum pixel values
+
 ## 📁 Dataset Download
 
 The original and resized fingerprint datasets are too large for GitHub.  
@@ -21,6 +27,7 @@ Please download them from this shared Google Drive folder:
 **Contents:**
 - `original_dataset.zip`
 - `resized(224x224).zip`
+- `normalised.zip`
 
 After downloading, extract the ZIP files and place them in the project directory or a new `datasets/` folder.
 
