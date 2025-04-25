@@ -1,8 +1,10 @@
-# Fingerprint Deepfake Detection using Traditional ML & Deep Learning
+# Biometric Spoof Detection: A Deep Learning Approach to Fingerprint Deepfakes
 
 ## Problem Statement
 
-Fingerprint-based biometric systems are increasingly threatened by spoofing attacks such as silicone replicas, 3D-printed fingers, and AI-generated fingerprints. Traditional machine learning models often fail to generalize due to limited feature representation. This project focuses on detecting fingerprint deepfakes using both classical machine learning and deep learning approaches.
+Fingerprint recognition systems are increasingly targeted by deepfake and spoofing attacks using silicone molds, 3D prints, or AI-generated images. Detecting these attacks is challenging due to their realistic nature. Traditional machine learning models relying on handcrafted features often overfit and fail to generalize. This project focuses on deep learning approaches that can learn complex patterns directly from fingerprint images for more accurate and robust spoof detection.
+
+
 
 ## Dataset Collection
 
@@ -48,7 +50,6 @@ Given the complexity of biometric spoof detection, deep learning is more effecti
 | EfficientNet-B0   | High accuracy with efficient scaling   | Optimized CNN      |
 | ViT-Small         | Captures global context and structure  | Vision Transformer |
 
-Each model was trained on the resized and normalized datasets.
 
 
 ## Challenges Faced
