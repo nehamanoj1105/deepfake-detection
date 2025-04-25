@@ -1,42 +1,70 @@
-# Deepfake-detection
+# Fingerprint Deepfake Detection using Traditional ML & Deep Learning
 
-### Our Project aims in finding the AI-generated fingerprints from the ones which are legit and original
+## Problem Statement
 
-## Resize.py
-This python file is used to resize the original images to a pixel dimension of 224*224 as our project demands.You can also change the resolution according to your needs in the code
+Fingerprint-based biometric systems are increasingly threatened by spoofing attacks such as silicone replicas, 3D-printed fingers, and AI-generated fingerprints. Traditional machine learning models often fail to generalize due to limited feature representation. This project focuses on detecting fingerprint deepfakes using both classical machine learning and deep learning approaches.
 
-## original_dataset.zip
-Has the dataset collected from various sources
+## Dataset Collection
 
-## resized(224*224).zip
-The images which we got after resizing
+The fingerprint datasets used are too large to host directly on GitHub. Please download them from the Google Drive link below:
 
-## normalised.zip
-The images which are normalised
+**Download Datasets:** [Datasets (Google Drive)](https://drive.google.com/drive/folders/19QanCCAnysk-3JebsYqcXtaaZCz-RJcj?usp=drive_link)
 
-## Generated_Dataset.zip
-Has the dataset on AI-generated images
+### Dataset Contents
 
-## Generated_Resized_Normalised
-Has the Generated images which are resized and then normalised.
+- `original_dataset.zip` – Raw fingerprint images
+- `resized(224x224).zip` – Resized images for deep learning models
+- `normalised.zip` – Normalized images for ML models
+- `Generated_Dataset.zip` – GAN-generated fingerprint spoof images
+- `Generated_Resized_Normalised/` – Final processed dataset used for training
 
-## normalise.py
-Min-Max Normalization: This involves scaling the pixel values to a fixed range, like [0, 1]. Each pixel value is transformed by subtracting the minimum pixel value of the image and then dividing by the difference between the maximum and minimum pixel values
+## Preprocessing
 
-## 📁 Dataset Download
+Fingerprint images were processed using the following steps:
 
-The original and resized fingerprint datasets are too large for GitHub.  
-Please download them from this shared Google Drive folder:
+1. **Resizing**: All images resized to 224x224 using `resize.py`
+2. **Normalization**: Pixel values normalized using `normalise.py`
+3. **Feature Extraction**: Gabor, LBP, or texture features extracted using `extract_fingerprint_features.py` for ML models
 
-🔗 [Download Datasets (Google Drive)](https://drive.google.com/drive/folders/19QanCCAnysk-3JebsYqcXtaaZCz-RJcj?usp=drive_link)
+## Traditional Machine Learning Models
 
-**Contents:**
-- `original_dataset.zip`
-- `resized(224x224).zip`
-- `normalised.zip`
-- `Generated_Dataset.zip`
-- `Generated_Resized_Normalised`
+We used traditional ML classifiers as a baseline:
 
-After downloading, extract the ZIP files and place them in the project directory or a new `datasets/` folder.
+- `svm.py`: Implements Support Vector Machine classifier
+- `xgboost_fingerprint.py`: Implements XGBoost classifier
+
+Limitations:
+- Overfitting observed due to low feature diversity
+- Poor generalization to unseen spoofing techniques
+
+## Deep Learning Models
+
+Given the complexity of biometric spoof detection, deep learning is more effective. The following models were implemented:
+
+| Model             | Strengths                             | Type               |
+|------------------|----------------------------------------|--------------------|
+| SimpleCNN         | Lightweight, fast                      | Shallow CNN        |
+| ResNet-18         | Robust deep feature extraction         | Residual CNN       |
+| EfficientNet-B0   | High accuracy with efficient scaling   | Optimized CNN      |
+| ViT-Small         | Captures global context and structure  | Vision Transformer |
+
+Each model was trained on the resized and normalized datasets.
+
+
+## Challenges Faced
+
+- Overfitting in ML models due to limited feature representation
+- Dataset-specific cues affecting model generalization
+- Need for models that can detect evolving spoofing methods
+- DL models still risk learning superficial patterns without diverse data
+
+## Key Takeaways
+
+1. Fingerprint spoof detection is a complex, high-stakes problem in biometric security.
+2. Classical ML models struggle to generalize across spoof types.
+3. Deep learning models perform better due to their ability to learn discriminative patterns.
+4. Combining CNNs and ViTs provides both local and global feature understanding.
+5. Dataset diversity and augmentation are critical for robust spoof detection.
+
 
 
